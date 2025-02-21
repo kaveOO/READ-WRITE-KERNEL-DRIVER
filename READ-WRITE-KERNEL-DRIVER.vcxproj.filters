@@ -27,9 +27,18 @@
     <ClInclude Include="ReadWrite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Events.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ReadWrite.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Events.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

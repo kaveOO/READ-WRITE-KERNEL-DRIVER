@@ -1,0 +1,1 @@
+C:\Users\kaveO\Desktop\READ-WRITE-KERNEL-DRIVER\x64\Release\READ-WRITE-KERNEL-DRIVER.sys

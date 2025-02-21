@@ -111,9 +111,12 @@
     <FilesToPackage Include="$(TargetPath)" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Data.h" />
+    <ClInclude Include="Events.h" />
     <ClInclude Include="ReadWrite.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Events.c" />
     <ClCompile Include="ReadWrite.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
