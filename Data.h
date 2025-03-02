@@ -2,4 +2,4 @@
 
 #include <ntdef.h>
 
-ULONG vfcompatDLLAddress;
+ULONG assaultCubeDLLAddress;

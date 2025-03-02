@@ -33,12 +33,18 @@
     <ClInclude Include="Data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="communication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ReadWrite.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Events.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="communication.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
