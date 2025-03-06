@@ -33,7 +33,7 @@
     <ClInclude Include="Data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="communication.h">
+    <ClInclude Include="Communication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,7 +44,7 @@
     <ClCompile Include="Events.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="communication.c">
+    <ClCompile Include="Communication.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
