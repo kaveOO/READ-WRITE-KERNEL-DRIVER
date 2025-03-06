@@ -3,6 +3,7 @@
 
 NTSTATUS IoControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 {
+	UNREFERENCED_PARAMETER(DeviceObject);
 	NTSTATUS Status = STATUS_UNSUCCESSFUL;
 	ULONG ByteIO = 0;
 
@@ -13,7 +14,7 @@ NTSTATUS IoControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 	if (ControlCode == IOCTL_GET_CLIENT_ADDRESS)
 	{
 		PULONG Output = (PULONG)Irp->AssociatedIrp.SystemBuffer;
-		Output = assaultCubeDLLAddress;
+		*Output = assaultCubeDLLAddress;
 
 		DbgPrintEx(0, 0, "Client Address requested !\n");
 		Status = STATUS_SUCCESS;
@@ -32,6 +33,7 @@ NTSTATUS IoControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 
 NTSTATUS CreateCall(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 {
+	UNREFERENCED_PARAMETER(DeviceObject);
 	Irp->IoStatus.Status = STATUS_SUCCESS;
 	Irp->IoStatus.Information = 0;
 
@@ -43,6 +45,7 @@ NTSTATUS CreateCall(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 
 NTSTATUS CloseCall(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 {
+	UNREFERENCED_PARAMETER(DeviceObject);
 	Irp->IoStatus.Status = STATUS_SUCCESS;
 	Irp->IoStatus.Information = 0;
 
