@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35806.99 d17.13
+VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "READ-WRITE-KERNEL-DRIVER", "READ-WRITE-KERNEL-DRIVER.vcxproj", "{6435B452-BB9A-1FDB-6797-C05BE3C5D2FD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReadWriteController", "..\ReadWriteController\ReadWriteController.vcxproj", "{06F3EAEC-AE06-41EF-9D94-1B79248D9832}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,14 @@ Global
 		{6435B452-BB9A-1FDB-6797-C05BE3C5D2FD}.Release|x64.ActiveCfg = Release|x64
 		{6435B452-BB9A-1FDB-6797-C05BE3C5D2FD}.Release|x64.Build.0 = Release|x64
 		{6435B452-BB9A-1FDB-6797-C05BE3C5D2FD}.Release|x64.Deploy.0 = Release|x64
+		{06F3EAEC-AE06-41EF-9D94-1B79248D9832}.Debug|ARM64.ActiveCfg = Debug|x64
+		{06F3EAEC-AE06-41EF-9D94-1B79248D9832}.Debug|ARM64.Build.0 = Debug|x64
+		{06F3EAEC-AE06-41EF-9D94-1B79248D9832}.Debug|x64.ActiveCfg = Debug|x64
+		{06F3EAEC-AE06-41EF-9D94-1B79248D9832}.Debug|x64.Build.0 = Debug|x64
+		{06F3EAEC-AE06-41EF-9D94-1B79248D9832}.Release|ARM64.ActiveCfg = Release|x64
+		{06F3EAEC-AE06-41EF-9D94-1B79248D9832}.Release|ARM64.Build.0 = Release|x64
+		{06F3EAEC-AE06-41EF-9D94-1B79248D9832}.Release|x64.ActiveCfg = Release|x64
+		{06F3EAEC-AE06-41EF-9D94-1B79248D9832}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
