@@ -114,11 +114,13 @@
     <ClInclude Include="Communication.h" />
     <ClInclude Include="Data.h" />
     <ClInclude Include="Events.h" />
+    <ClInclude Include="Memory.h" />
     <ClInclude Include="ReadWrite.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Communication.c" />
     <ClCompile Include="Events.c" />
+    <ClCompile Include="Memory.c" />
     <ClCompile Include="ReadWrite.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

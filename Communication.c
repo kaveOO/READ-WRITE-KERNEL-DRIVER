@@ -1,5 +1,6 @@
 #include "Communication.h"
 #include "Data.h"
+#include "Memory.h"
 
 NTSTATUS IoControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 {
@@ -19,6 +20,30 @@ NTSTATUS IoControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 		DbgPrintEx(0, 0, "Client Address requested !\n");
 		Status = STATUS_SUCCESS;
 		ByteIO = sizeof(*Output);
+	}
+	else if (ControlCode == IOCTL_READ_REQUEST)
+	{
+		PKernelReadRequest ReadInput = (PKernelReadRequest)Irp->AssociatedIrp.SystemBuffer;
+		PEPROCESS Process;
+
+		if (NT_SUCCESS(PsLookupProcessByProcessId(ReadInput->ProcessId, &Process)))
+		{
+			KernelReadVirtualMemory(Process, ReadInput->Address, ReadInput->PBuffer, ReadInput->Size);
+			Status = STATUS_SUCCESS;
+			ByteIO = sizeof(KernelReadRequest);
+		}
+	}
+	else if (ControlCode == IOCTL_WRITE_REQUEST)
+	{
+		PKernelWriteRequest WriteInput = (PKernelWriteRequest)Irp->AssociatedIrp.SystemBuffer;
+		PEPROCESS Process;
+
+		if (NT_SUCCESS(PsLookupProcessByProcessId(WriteInput->ProcessId, &Process)))
+		{
+			KernelWriteVirtualMemory(Process, WriteInput->PBuffer, WriteInput->Address, WriteInput->Size);
+			Status = STATUS_SUCCESS;
+			ByteIO = sizeof(KernelWriteRequest);
+		}
 	}
 	else
 	{
