@@ -33,4 +33,51 @@ class KernelInterface
 		}
 		return (0);
 	}
+
+	template <typename type>
+	type ReadVirtualMemory(ULONG ProcessId, ULONG ReadAddress, SIZE_T Size)
+	{
+		type Buffer;
+
+		if (hDriver == INVALID_HANDLE_VALUE)
+		{
+			return Buffer;
+		}
+
+		KernelReadRequest ReadRequest;
+
+		ReadRequest.ProcessId = ProcessId;
+		ReadRequest.Address = ReadAddress;
+		ReadRequest.PBuffer = &Buffer;
+		ReadRequest.Size = Size;
+
+		if (DeviceIoControl(hDriver, IOCTL_READ_REQUEST, &ReadRequest, sizeof(ReadRequest), &ReadRequest, sizeof(ReadRequest), 0, 0))
+		{
+			return Buffer;
+		}
+		return Buffer;
+	}
+
+	template <typename type>
+	type WriteVirtalMemory(ULONG ProcessId, ULONG WriteAddress, type WriteValue, SIZE_T Size)
+	{
+		if (hDriver == INVALID_HANDLE_VALUE) // Returning false right here cause we are Writing so we have no value to retrieve !
+		{
+			return false;
+		}
+
+		DWORD Bytes;
+		KernelWriteRequest WriteRequest;
+
+		WriteRequest.ProcessId = ProcessId;
+		WriteRequest.Address = WriteAddress;
+		WriteRequest.PBuffer = &WriteValue;
+		WriteRequest.Size = Size;
+
+		if (DeviceIoControl(hDriver, IOCTL_WRITE_REQUEST, &WriteRequest, sizeof(WriteRequest), 0, 0, &Bytes, NULL))
+		{
+			return true;
+		}
+		return false;
+	}
 };
