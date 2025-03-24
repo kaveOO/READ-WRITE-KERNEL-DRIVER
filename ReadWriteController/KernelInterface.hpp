@@ -54,7 +54,7 @@ class KernelInterface
 	template <typename type>
 	type ReadVirtualMemory(ULONG ProcessId, ULONG ReadAddress, SIZE_T Size)
 	{
-		type Buffer;
+		type Buffer = 0;
 		KernelReadRequest ReadRequest;
 
 		ReadRequest.ProcessId = ProcessId;
