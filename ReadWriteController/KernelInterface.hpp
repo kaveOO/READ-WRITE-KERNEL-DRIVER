@@ -34,16 +34,27 @@ class KernelInterface
 		return (0);
 	}
 
+	DWORD GetProcessId()
+	{
+		if (hDriver == INVALID_HANDLE_VALUE)
+		{
+			return (0);
+		}
+
+		ULONG ProcessId;
+		DWORD Bytes;
+
+		if (DeviceIoControl(hDriver, IOCTL_REQUEST_PROCESSID, &ProcessId, sizeof(ProcessId), &ProcessId, sizeof(ProcessId), &Bytes, NULL))
+		{
+			return (ProcessId);
+		}
+		return (0);
+	}
+
 	template <typename type>
 	type ReadVirtualMemory(ULONG ProcessId, ULONG ReadAddress, SIZE_T Size)
 	{
 		type Buffer;
-
-		if (hDriver == INVALID_HANDLE_VALUE)
-		{
-			return Buffer;
-		}
-
 		KernelReadRequest ReadRequest;
 
 		ReadRequest.ProcessId = ProcessId;
@@ -59,7 +70,7 @@ class KernelInterface
 	}
 
 	template <typename type>
-	type WriteVirtalMemory(ULONG ProcessId, ULONG WriteAddress, type WriteValue, SIZE_T Size)
+	type WriteVirtualMemory(ULONG ProcessId, ULONG WriteAddress, type WriteValue, SIZE_T Size)
 	{
 		if (hDriver == INVALID_HANDLE_VALUE) // Returning false right here cause we are Writing so we have no value to retrieve !
 		{

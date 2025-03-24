@@ -15,9 +15,18 @@ NTSTATUS IoControl(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 	if (ControlCode == IOCTL_GET_CLIENT_ADDRESS)
 	{
 		PULONG Output = (PULONG)Irp->AssociatedIrp.SystemBuffer;
-		*Output = assaultCubeDLLAddress;
+		*Output = Cs2DLLAddress;
 
 		DbgPrintEx(0, 0, "Client Address requested !\n");
+		Status = STATUS_SUCCESS;
+		ByteIO = sizeof(*Output);
+	}
+	else if (ControlCode == IOCTL_REQUEST_PROCESSID)
+	{
+		PULONG Output = (PULONG)Irp->AssociatedIrp.SystemBuffer;
+		*Output = ProcessId;
+
+		DbgPrintEx(0, 0, "ProcessId requested !\n");
 		Status = STATUS_SUCCESS;
 		ByteIO = sizeof(*Output);
 	}

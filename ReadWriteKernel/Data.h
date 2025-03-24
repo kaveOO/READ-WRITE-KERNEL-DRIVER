@@ -2,6 +2,6 @@
 
 #include <ntdef.h>
 
-ULONG assaultCubeDLLAddress;
+ULONG Cs2DLLAddress, ProcessId;
 PDEVICE_OBJECT pDeviceObject;
 UNICODE_STRING dev, dos;

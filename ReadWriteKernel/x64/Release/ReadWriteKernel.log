@@ -1,1 +1,2 @@
-﻿
+﻿E:\Windows Kits\10\build\10.0.26100.0\WindowsDriver.common.targets(1788,5): warning MSB3061: Unable to delete file "x64\Release\ReadWriteKernel\ReadWriteKernel.sys". Access to the path 'C:\Users\kaveO\Desktop\ReadWriteKernel\ReadWriteKernel\x64\Release\ReadWriteKernel\ReadWriteKernel.sys' is denied. 
+E:\Windows Kits\10\build\10.0.26100.0\WindowsDriver.common.targets(1790,5): warning MSB3231: Unable to remove directory "x64\Release\ReadWriteKernel\". Access to the path 'ReadWriteKernel.sys' is denied.
