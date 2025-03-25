@@ -18,14 +18,10 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
+
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![project_license][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -71,9 +67,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -107,10 +101,19 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+This step is mandatory if you want to use the Driver !
+* Install [Visual Studio](https://visualstudio.microsoft.com/)
+* Libraries (Visual Studio Installer)
   ```sh
-  npm install npm@latest -g
+  When you install Visual Studio 2022, select the Desktop development with C++ workload, then under Individual Components add ->
+
+  MSVC v143 - VS 2022 C++ ARM64/ARM64EC Spectre-mitigated libs (Latest)
+  MSVC v143 - VS 2022 C++ x64/x86 Spectre-mitigated libs (Latest)
+  C++ ATL for latest v143 build tools with Spectre Mitigations (ARM64/ARM64EC)
+  C++ ATL for latest v143 build tools with Spectre Mitigations (x86 & x64)
+  C++ MFC for latest v143 build tools with Spectre Mitigations (ARM64/ARM64EC)
+  C++ MFC for latest v143 build tools with Spectre Mitigations (x86 & x64)
+  Windows Driver Kit
   ```
 
 ### Installation
@@ -220,18 +223,12 @@ Project Link -> [https://github.com/kaveOO/ReadWriteKernel](https://github.com/k
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/kaveOO/ReadWriteKernel.svg?style=for-the-badge
-[contributors-url]: https://github.com/kaveOO/ReadWriteKernel/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/kaveOO/ReadWriteKernel.svg?style=for-the-badge
-[forks-url]: https://github.com/kaveOO/ReadWriteKernel/network/members
 [stars-shield]: https://img.shields.io/github/stars/kaveOO/ReadWriteKernel.svg?style=for-the-badge
 [stars-url]: https://github.com/kaveOO/ReadWriteKernel/stargazers
 [issues-shield]: https://img.shields.io/github/issues/kaveOO/ReadWriteKernel.svg?style=for-the-badge
 [issues-url]: https://github.com/kaveOO/ReadWriteKernel/issues
 [license-shield]: https://img.shields.io/github/license/kaveOO/ReadWriteKernel.svg?style=for-the-badge
 [license-url]: https://github.com/kaveOO/ReadWriteKernel/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Kernel_Layout.svg/1280px-Kernel_Layout.svg.png
 [C]: https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white
 [C-url]: https://en.wikipedia.org/wiki/C_(programming_language)
