@@ -116,30 +116,53 @@ This step is mandatory if you want to use the Driver !
   ```
 
 ### Installation
+⚠️ **Execute all commands in Elevated Command Prompt !**
 
 2. Clone the repo
    ```sh
    git clone https://github.com/kaveOO/ReadWriteKernel.git
    ```
-3. Install NPM packages
+3. Build the project
    ```sh
-   npm install
+   open ReadWriteKernel.sln and build the project in x64 Release
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+4. Setup Kernel Space
    ```
-5. Change git remote url to avoid accidental pushes to base project
-   ```sh
-   git remote set-url origin kaveOO/ReadWriteKernel
-   git remote -v # confirm the changes
+   bcdedit /set testsigning on
+   bcdedit /debug on
+   bcdedit /dbgsettings local
    ```
-
+5. Restart your computer
+6. Add Driver into Windows Kernel Space and start it
+   ```
+   sc create driver_name type=kernel binpath="path_to_driver" (path including driver .sys file !)
+   sc start driver_name
+   ```
+7. Add Insecure flag in CS2 launch options ⚠️ THIS STEP IS MANDATORY ⚠️
+   ```
+   right click CS2 go to properties and add in launch options ->
+   
+   -insecure
+   ```
+8. Start CS2 and go to Private Match
+9. Start Usermode Application (anti-flash)
+   ```
+   go to ReadWriteKernel\ReadWriteKernel\x64\Release
+   run ReadWriteController.exe as Elevated Mode
+   ```
+10. Stop and delete Driver
+   ```
+  sc stop <driver_name>
+  sc delete <driver_name>
+   ```
+11. Restart your computer
+### NOW, YOU ARE A CHEATER GGWP 🧌
+   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-<!-- USAGE EXAMPLES -->
+<!-- USAGE EXAMPLES
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
