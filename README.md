@@ -103,10 +103,9 @@ To get a local copy up and running follow these simple example steps.
 
 This step is mandatory if you want to use the Driver !
 * Install [Visual Studio](https://visualstudio.microsoft.com/)
+* Install [Windows SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/) 
 * Libraries (Visual Studio Installer)
   ```sh
-  When you install Visual Studio 2022, select the Desktop development with C++ workload, then under Individual Components add ->
-
   MSVC v143 - VS 2022 C++ ARM64/ARM64EC Spectre-mitigated libs (Latest)
   MSVC v143 - VS 2022 C++ x64/x86 Spectre-mitigated libs (Latest)
   C++ ATL for latest v143 build tools with Spectre Mitigations (ARM64/ARM64EC)
@@ -118,7 +117,6 @@ This step is mandatory if you want to use the Driver !
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
    git clone https://github.com/kaveOO/ReadWriteKernel.git
