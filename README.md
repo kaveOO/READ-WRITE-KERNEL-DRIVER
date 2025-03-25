@@ -33,10 +33,8 @@
 <h3 align="center">Read/Write - Kernel Driver</h3>
 
   <p align="center">
-    A simple Kernel Driver used to Read/Write memory in any process
-    <br />
-    <a href="https://github.com/kaveOO/ReadWriteKernel"><strong>Explore the docs »</strong></a>
-    <br />
+    A simple Kernel Driver that remove Flash Duration on CS2 !
+    <br>
     <br />
     <a href="https://github.com/kaveOO/ReadWriteKernel">View Demo</a>
     &middot;
@@ -59,13 +57,15 @@
       </ul>
     </li>
     <li>
+      <a href="#disclaimer">Disclaimer</a>
+    </li>
+    <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -92,11 +92,25 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+## Disclaimer
+
+⚠️***Of course, in this Driver, I'm not using methods to Bypass the Anti-Cheat of CS2***
+<br>
+***Be sure to follow steps to not get your Account Banned, I'm not responsible of this !***
+<br>
+***Don't ask me how to bypass VAC, learn by yourself like all the GOATS of this World did***⚠️
+
+<p align="right">(<a href="#disclaimer">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Please don't open Issues for nothing, don't be dumb and **Google is your friend !**
+If you want to use the Driver please read below.
+<br>
+Please do not open Issues for nothing don't be DUMB.
+<br>
+<br>
+`GOOGLE IS YOUR FRIEND !`
 
 ### Prerequisites
 
