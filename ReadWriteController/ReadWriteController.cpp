@@ -1,58 +1,113 @@
 #include <iostream>
 #include "KernelInterface.hpp"
 #include "Offsets.hpp"
+#include <tchar.h>
+#include <TlHelp32.h>
 
 int main()
 {
 	KernelInterface Driver = KernelInterface("\\\\.\\ReadWrite");
 
 	//ULONG Address = Driver.GetClientAddress();
-	ULONG ProcessId = Driver.GetProcessId();
-	std::cout << "ProcessId right here -> " << ProcessId << std::endl;
+	//std::cout << "Client address right here -> " << Address << std::endl; 
 
-	uint64_t clientBaseAddr = 0x7ffd94100000;
-	uint64_t fullAddr = clientBaseAddr + Offsets::dwLocalPlayerPawn;
+	//ULONG ProcessId = Driver.GetProcessId();
+	//std::cout << "ProcessId right here -> " << ProcessId << std::endl;
 
-	std::cout << std::hex << fullAddr << std::dec << std::endl;
+	//while (true)
+	//{
+	//	uint32_t localPlayerAddress = Driver.ReadVirtualMemory<uint32_t>(ProcessId, Address + Offsets::dwLocalPlayerPawn, sizeof(uint32_t));
+	//	Driver.WriteVirtualMemory(ProcessId, localPlayerAddress + Offsets::m_flFlashDuration, 0.f, sizeof(0.f));
+	//}
 
-	while (true)
-	{
-		//std::cout << std::hex << Offsets::dwLocalPlayerPawn << std::endl;
-		//uint64_t localPlayerAddress = Driver.ReadVirtualMemory<uint64_t>(ProcessId, full_address + Offsets::dwLocalPlayerPawn, sizeof(uint32_t));
+	// READ THIS !
+	// Above this I'm using my Driver function to Read/Write memory in the game but of course theses methods are not usables because
+	// made to bypass Anti-Cheats because I have to work hard to bypass theses programs and I will never share my work on this !
 
-		//uint64_t playerPos = full_address + Offsets::dwLocalPlayerPawn;
+	// IF YOU HAVE ANY QUESTIONS RELATED TO KERNEL DEVELOPMENT YOU CAN ASK ME 
+	// DON'T ASK ME TO BYPASS ANTI-CHEATS 
+	
 
-		//std::cout << playerPos << std::endl;
-		//std::cout << Offsets::m_flFlashDuration << std::endl;
 
-		//float flash = 0.0f;
+	// FUCK COPY PASTERS
+	// FUCK COPY PASTERS
+	// FUCK COPY PASTERS
 
-		std::cout << fullAddr + 0x140C << std::endl;
+    SetConsoleTitleA("made by kaveO <3");
 
-		//float flash = Driver.ReadVirtualMemory<float>(ProcessId, fullAddr + 0x140C, sizeof(float));
+    ULONG ProcessId = Driver.GetProcessId();
+    if (ProcessId == 0)
+    {
+        std::cerr << "Failed to get process ID !" << std::endl;
+    }
 
-		//float flash;
-		//DWORD Bytes;
+    MODULEENTRY32 moduleEntry;
+    HANDLE snapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, ProcessId);
+    if (snapshot == INVALID_HANDLE_VALUE)
+    {
+        std::cerr << "Failed to create snapshot for CS2 process !" << std::endl;
+        return 1;
+    }
 
-		//if (!ReadProcessMemory(hProcess, (LPCVOID)(playerPos + 0x140C), &flash, sizeof(float), 0));
-		//{
-		//	std::cout << "Error when reading" << std::endl;
-		//}
+    moduleEntry.dwSize = sizeof(MODULEENTRY32);
+    uint64_t clientBaseAddr = 0;
+    if (Module32First(snapshot, &moduleEntry))
+    {
+        do
+        {
+            if (_tcscmp(moduleEntry.szModule, _T("client.dll")) == 0)
+            {
+                clientBaseAddr = reinterpret_cast<uint64_t>(moduleEntry.modBaseAddr);
+                break;
+            }
+        } while (Module32Next(snapshot, &moduleEntry));
+    }
+    CloseHandle(snapshot);
 
-		//std::cout << flash << std::endl;
+    if (clientBaseAddr == 0)
+    {
+        std::cerr << "Failed to find client.dll base address !" << std::endl;
+        return 1;
+    }
 
-		//std::cout << playerPos + 0x140C << std::endl;
+    HANDLE CS2 = OpenProcess(PROCESS_ALL_ACCESS, FALSE, ProcessId);
+    if (CS2 == NULL)
+    {
+        std::cout << "Failed to open HANDLE on CS2 process !" << std::endl;
+        return 1;
+    }
 
-		//float flash = Driver.ReadVirtualMemory<float>(ProcessId, playerPos + 0x140C, sizeof(float));
-		//std::cout << flash << std::endl;
+    uint64_t localPlayerPtr = 0;
+    while (true)
+    {
+        LPVOID localPlayerAddr = reinterpret_cast<LPVOID>(clientBaseAddr + Offsets::dwLocalPlayerPawn);
+        if (!ReadProcessMemory(CS2, localPlayerAddr, &localPlayerPtr, sizeof(localPlayerPtr), nullptr))
+        {
+            std::cerr << "Failed to find localPlayerPtr with Read !" << std::endl;
+            Sleep(100);
+            continue;
+        }
+        if (localPlayerPtr == 0)
+        {
+            std::cerr << "localPlayerPtr pointer is null !" << std::endl;
+            Sleep(100);
+            continue;
+        }
 
-		//if (Driver.WriteVirtualMemory<float>(ProcessId, playerPos + 0x140C, 0.0f, sizeof(0.0f)))
-		//{
-		//	std::cout << "Successfully changed the flash value !" << std::endl;
-		//}
-		//else
-		//{
-		//	std::cout << "Failed to change flash value" << std::endl;
-		//}
-	}
+        LPVOID flashAddr = reinterpret_cast<LPVOID>(localPlayerPtr + Offsets::m_flFlashDuration);
+        std::cout << "Attempting to write to flash address -> " << flashAddr << std::endl;
+
+        float flashDuration = 0.0f;
+        if (!WriteProcessMemory(CS2, flashAddr, &flashDuration, sizeof(flashDuration), nullptr))
+        {
+            std::cerr << "WriteProcessMemory failed, error -> " << GetLastError() << std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully wrote flash duration as -> " << flashDuration << std::endl;
+        }
+        Sleep(100);
+    }
+    CloseHandle(CS2);
+    return 0;
 }
