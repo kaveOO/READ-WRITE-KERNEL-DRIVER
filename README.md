@@ -35,7 +35,7 @@
     A simple Kernel Driver that remove Flash Duration on CS2 !
     <br>
     <br />
-    <a href="https://github.com/kaveOO/ReadWriteKernel">View Demo</a>
+    <a href="https://x.com/i/status/1904448538924167591">View Demo</a>
     &middot;
     <a href="https://github.com/kaveOO/ReadWriteKernel/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
