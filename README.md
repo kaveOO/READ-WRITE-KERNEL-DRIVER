@@ -21,12 +21,11 @@
 
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![project_license][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/kaveOO/ReadWriteKernel">
+  <a href="https://en.wikipedia.org/wiki/Protection_ring">
     <img src="https://cdn.ezo.io/wp-content/uploads/2024/08/image-1-1024x1024.png" alt="Logo" width="200" height="200">
   </a>
 
@@ -77,7 +76,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://www.geeksforgeeks.org/kernel-in-operating-system/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -261,8 +260,6 @@ Project Link -> [https://github.com/kaveOO/ReadWriteKernel](https://github.com/k
 [stars-url]: https://github.com/kaveOO/ReadWriteKernel/stargazers
 [issues-shield]: https://img.shields.io/github/issues/kaveOO/ReadWriteKernel.svg?style=for-the-badge
 [issues-url]: https://github.com/kaveOO/ReadWriteKernel/issues
-[license-shield]: https://img.shields.io/github/license/kaveOO/ReadWriteKernel.svg?style=for-the-badge
-[license-url]: https://github.com/kaveOO/ReadWriteKernel/blob/main/LICENSE.txt
 [product-screenshot]: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Kernel_Layout.svg/1280px-Kernel_Layout.svg.png
 [C]: https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white
 [C-url]: https://en.wikipedia.org/wiki/C_(programming_language)
