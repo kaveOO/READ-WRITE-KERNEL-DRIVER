@@ -152,18 +152,16 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/kaveOO/ReadWriteKernel/issues) for a full list of proposed features (and known issues).
-
+- [x] Basic Functions of Driver
+- [x] IOCTL Communication
+- [x] Read/Write functions
+- [x] IOCTL requests for Read/Write
+- [x] Implementation of CS2 anti-flash
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-<!-- CONTRIBUTING -->
+<!-- CONTRIBUTING
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -196,7 +194,7 @@ Distributed under the project_license. See `LICENSE.txt` for more information.
 
 
 
-<!-- CONTACT -->
+<!-- CONTACT
 ## Contact
 
 Your Name - [@kaveofps](https://twitter.com/kaveofps) - email@email_client.com
@@ -213,6 +211,8 @@ Project Link -> [https://github.com/kaveOO/ReadWriteKernel](https://github.com/k
 * [Unknowns Cheats Forum](https://www.unknowncheats.me/forum/index.php)
 * [Elitepvpers Forum](https://www.elitepvpers.com/)
 * [Microsoft Kernel Documentation](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/_kernel/)
+* [Geeks For Geeks](https://www.geeksforgeeks.org/)
+* [Amit Moshel (GOATED)](https://medium.com/@amitmoshel70)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
