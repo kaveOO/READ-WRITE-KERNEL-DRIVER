@@ -27,7 +27,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/kaveOO/ReadWriteKernel">
-    <img src="https://memn0ps.github.io/Rusty-Windows-Kernel-Rootkit/CPU_ring_scheme.png" alt="Logo" width="100" height="100">
+    <img src="https://cdn.ezo.io/wp-content/uploads/2024/08/image-1-1024x1024.png" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Read/Write - Kernel Driver</h3>
@@ -96,8 +96,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Please don't open Issues for nothing, don't be dumb and **Google is your friend !**
 
 ### Prerequisites
 
@@ -212,7 +211,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the project_license. See `LICENSE.txt` for more information.
+Distributed under the **MIT**. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -249,7 +248,7 @@ Project Link -> [https://github.com/kaveOO/ReadWriteKernel](https://github.com/k
 [issues-shield]: https://img.shields.io/github/issues/kaveOO/ReadWriteKernel.svg?style=for-the-badge
 [issues-url]: https://github.com/kaveOO/ReadWriteKernel/issues
 [license-shield]: https://img.shields.io/github/license/kaveOO/ReadWriteKernel.svg?style=for-the-badge
-[license-url]: https://github.com/kaveOO/ReadWriteKernel/blob/master/LICENSE.txt
+[license-url]: https://github.com/kaveOO/ReadWriteKernel/blob/main/LICENSE.txt
 [product-screenshot]: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Kernel_Layout.svg/1280px-Kernel_Layout.svg.png
 [C]: https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white
 [C-url]: https://en.wikipedia.org/wiki/C_(programming_language)
